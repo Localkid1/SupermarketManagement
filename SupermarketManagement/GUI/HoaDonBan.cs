@@ -22,9 +22,9 @@ namespace SupermarketManagement.GUI
         private void HoaDonBan_Load(object sender, EventArgs e)
         {
             LoadDataToLabels();
+            
         }
-
-
+      
         private void LoadDataToLabels()
         {
             float tong = 0;
@@ -59,20 +59,19 @@ namespace SupermarketManagement.GUI
                         item.SubItems.Add((soluong * gia).ToString());
                         tong += soluong * gia;
                     }
-
                     listViewHoaDon.Items.Add(item);
-
-
                 }
                 lblTong.Text = tong.ToString();
-            }
-            
-
-                
-                
+            }                                        
            
         }
 
-       
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+         
+            lblTime.Text = DateTime.Now.ToString();
+            this.timer1.Enabled = false;
+
+        }
     }
 }

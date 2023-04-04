@@ -42,6 +42,7 @@
             this.dataGridViewHoadonban = new System.Windows.Forms.DataGridView();
             this.btnTimkiemhoadon = new FontAwesome.Sharp.IconButton();
             this.txtTimkiemhoadon = new System.Windows.Forms.TextBox();
+            this.cbxSort = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHoadonban)).BeginInit();
@@ -194,12 +195,32 @@
             this.txtTimkiemhoadon.Size = new System.Drawing.Size(248, 46);
             this.txtTimkiemhoadon.TabIndex = 34;
             // 
+            // cbxSort
+            // 
+            this.cbxSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSort.DropDownWidth = 300;
+            this.cbxSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbxSort.FormattingEnabled = true;
+            this.cbxSort.Items.AddRange(new object[] {
+            "Tên: A-Z",
+            "Tên: Z-A",
+            "Thành tiền: Tăng dần",
+            "Thành tiền: Giảm dần",
+            "Thời gian: Mới nhất",
+            "Thời gian: Cũ nhất"});
+            this.cbxSort.Location = new System.Drawing.Point(229, 584);
+            this.cbxSort.Name = "cbxSort";
+            this.cbxSort.Size = new System.Drawing.Size(238, 33);
+            this.cbxSort.TabIndex = 36;
+            this.cbxSort.SelectedValueChanged += new System.EventHandler(this.cbxSort_SelectedValueChanged);
+            // 
             // NhapKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1133, 651);
+            this.Controls.Add(this.cbxSort);
             this.Controls.Add(this.btnTimkiemhoadon);
             this.Controls.Add(this.txtTimkiemhoadon);
             this.Controls.Add(this.dataGridViewHoadonban);
@@ -239,5 +260,6 @@
         private System.Windows.Forms.DataGridView dataGridViewHoadonban;
         private FontAwesome.Sharp.IconButton btnTimkiemhoadon;
         private System.Windows.Forms.TextBox txtTimkiemhoadon;
+        private System.Windows.Forms.ComboBox cbxSort;
     }
 }

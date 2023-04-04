@@ -109,7 +109,13 @@ namespace SupermarketManagement.GUI
         {
             dataGridViewHoadon.Rows.Clear();
             txtSoluongnhap.Clear();
+            txtMasanpham.Clear();
+            txtTensanpham.Clear();
+            txtSoluong.Clear();
+            txtDonvitinh.Clear();
+            txtGiaban.Clear();
             lblTongtien.Text = "";
+         
          
         }
 
