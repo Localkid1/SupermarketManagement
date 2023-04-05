@@ -10,7 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-
+using Microsoft.Office.Interop.Word;
+using System.CodeDom;
 
 namespace SupermarketManagement.GUI
 {
@@ -21,10 +22,10 @@ namespace SupermarketManagement.GUI
             InitializeComponent();
         }
         string connectionString = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=db.Supermarket;Integrated Security=True";
-      
+
         private void DoanhThu_Load(object sender, EventArgs e)
         {
-          
+
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand("SELECT DAY(InvoiceDate) AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 WHERE DATEPART(month, InvoiceDate) = 3 GROUP BY DAY(InvoiceDate) ORDER BY DAY(InvoiceDate)", connection);
             connection.Open();
@@ -48,7 +49,7 @@ namespace SupermarketManagement.GUI
             chartDoanhthu.Series.Clear();
             chartDoanhthu.Series.Add(series);
             chartDoanhthu.Update();
-       
+
             cbxDate_SelectedValueChanged(sender, e);
             reader.Close();
             connection.Close();
@@ -57,15 +58,15 @@ namespace SupermarketManagement.GUI
 
         }
 
-       
+
 
         private void cbxDate_SelectedValueChanged(object sender, EventArgs e)
         {
-           // System.Data.DataTable dataTable = new System.Data.DataTable();
+            // System.Data.DataTable dataTable = new System.Data.DataTable();
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             // Lặp qua tất cả các DataPoint trong chuỗi dữ liệu
-           
+
             if (cbxDate.SelectedItem != null)
             {
                 switch (cbxDate.SelectedItem.ToString())
@@ -94,15 +95,15 @@ namespace SupermarketManagement.GUI
                             int ngayHoaDon = Convert.ToInt32(reader["Ngay"]);
                             double tongTien = Convert.ToDouble(reader["TongTien"]);
 
-                            series.Points[ngayHoaDon -1].SetValueY(tongTien);                         
+                            series.Points[ngayHoaDon - 1].SetValueY(tongTien);
 
                         }
 
                         chartDoanhthu.Series.Clear();
                         chartDoanhthu.Series.Add(series);
-                     
+
                         chartDoanhthu.Update();
-                      
+
                         reader.Close();
                         connection.Close();
 
@@ -472,11 +473,11 @@ namespace SupermarketManagement.GUI
 
                         break;
 
-                  
+
                     case "Tháng":
                         // SqlConnection connection = new SqlConnection(connectionString);
                         SqlCommand cmd1 = new SqlCommand("SELECT MONTH(InvoiceDate) AS Tháng, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 GROUP BY MONTH(InvoiceDate) ORDER BY MONTH(InvoiceDate)", connection);
-                      //  connection.Open();
+                        //  connection.Open();
                         SqlDataReader reader1 = cmd1.ExecuteReader();
 
                         System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series("Doanh thu theo tháng");
@@ -495,17 +496,17 @@ namespace SupermarketManagement.GUI
                         }
                         chartDoanhthu.Series.Clear();
                         chartDoanhthu.Series.Add(series1);
-                    //    chartDoanhthu.ChartAreas[0].AxisY.Interval = 200000;
-                    //    chartDoanhthu.ChartAreas[0].AxisY.LabelStyle.Format = "#,#";
+                        //    chartDoanhthu.ChartAreas[0].AxisY.Interval = 200000;
+                        //    chartDoanhthu.ChartAreas[0].AxisY.LabelStyle.Format = "#,#";
                         chartDoanhthu.Update();
-                       
+
                         //  cbxDate_SelectedIndexChanged(sender, e);
                         reader1.Close();
 
                         break;
                     case "Năm":
                         SqlCommand cmd2 = new SqlCommand("SELECT YEAR(InvoiceDate) AS Năm, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1  GROUP BY YEAR(InvoiceDate) ORDER BY YEAR(InvoiceDate)", connection);
-                      //  connection.Open();
+                        //  connection.Open();
                         SqlDataReader reader2 = cmd2.ExecuteReader();
 
                         System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series("Doanh thu theo năm");
@@ -524,10 +525,10 @@ namespace SupermarketManagement.GUI
                         chartDoanhthu.Series.Clear();
                         chartDoanhthu.Series.Add(series2);
 
-                      
+
                         chartDoanhthu.Update();
-                       
-                       
+
+
                         reader2.Close();
                         break;
                 }
@@ -559,5 +560,75 @@ namespace SupermarketManagement.GUI
             // Xóa nhãn giá trị dữ liệu trên đỉnh cột khi chuột rời khỏi biểu đồ
             chartDoanhthu.Series[0].Points.ToList().ForEach(p => p.Label = "");
         }
+
+        private void btnLapbaocao_Click(object sender, EventArgs e)
+        {
+            if (cbxDate.SelectedItem != null)
+            {
+                string selectedItem = cbxDate.SelectedItem.ToString();
+
+
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                // Kiểm tra giá trị được chọn
+                if (selectedItem == "Ngày (Tháng 1)")
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM HoaDonBan1 WHERE MONTH(InvoiceDate) = 1", connection);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+    
+                    // Đọc dữ liệu và lưu vào mảng 2 chiều
+                    int rowCount = 0;
+                    int columnCount = reader.FieldCount;
+                    object[,] data = new object[100, columnCount];
+                    while (reader.Read())
+                    {
+                        for (int i = 0; i < columnCount; i++)
+                        {
+                            data[rowCount, i] = reader[i];
+                        }
+                        rowCount++;
+                    }
+
+                    // Tạo tài liệu Word và thêm dữ liệu vào tài liệu
+                    var wordApp = new Microsoft.Office.Interop.Word.Application();
+                    var doc = wordApp.Documents.Add();
+                    doc.Content.Text = "Báo cáo từ dữ liệu ComboBox:";
+                    var table = doc.Tables.Add(doc.Range(), rowCount, columnCount);
+                    for (int i = 0; i < rowCount; i++)
+                    {
+                        for (int j = 0; j < columnCount; j++)
+                        {
+                            table.Cell(i + 1, j + 1).Range.Text = data[i, j].ToString();
+                        }
+                    }
+                    connection.Close();
+
+                    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                    saveFileDialog1.Filter = "Word Document|*.docx";
+                    saveFileDialog1.Title = "Báo cáo doanh thu";
+                    saveFileDialog1.ShowDialog();
+
+                   
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("Thêm dữ liệu thành công!");
+                    }
+                    if (cmd.ExecuteNonQuery() == 0)
+                    {
+                        MessageBox.Show("Thêm dữ liệu thất bại!");
+                    }
+
+                    if (saveFileDialog1.FileName != "")
+                    {
+                        // Lưu tài liệu và đóng ứng dụng Word
+                        doc.SaveAs(saveFileDialog1.FileName);
+                        wordApp.Quit();
+                    }                
+                }
+
+            }
+        }
+
     }
 }
