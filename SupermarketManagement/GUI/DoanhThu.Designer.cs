@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.chartDoanhthu = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cbxDate = new System.Windows.Forms.ComboBox();
+            this.btnLapbaocao = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhthu)).BeginInit();
@@ -92,6 +93,8 @@
             // 
             // cbxDate
             // 
+            this.cbxDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbxDate.FormattingEnabled = true;
             this.cbxDate.Items.AddRange(new object[] {
             "Ngày (Tháng 1)",
@@ -110,9 +113,27 @@
             "Năm"});
             this.cbxDate.Location = new System.Drawing.Point(55, 598);
             this.cbxDate.Name = "cbxDate";
-            this.cbxDate.Size = new System.Drawing.Size(195, 24);
+            this.cbxDate.Size = new System.Drawing.Size(195, 33);
             this.cbxDate.TabIndex = 4;
             this.cbxDate.SelectedValueChanged += new System.EventHandler(this.cbxDate_SelectedValueChanged);
+            // 
+            // btnLapbaocao
+            // 
+            this.btnLapbaocao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnLapbaocao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLapbaocao.ForeColor = System.Drawing.Color.White;
+            this.btnLapbaocao.IconChar = FontAwesome.Sharp.IconChar.Scroll;
+            this.btnLapbaocao.IconColor = System.Drawing.Color.White;
+            this.btnLapbaocao.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLapbaocao.IconSize = 30;
+            this.btnLapbaocao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLapbaocao.Location = new System.Drawing.Point(854, 586);
+            this.btnLapbaocao.Name = "btnLapbaocao";
+            this.btnLapbaocao.Size = new System.Drawing.Size(169, 53);
+            this.btnLapbaocao.TabIndex = 36;
+            this.btnLapbaocao.Text = "Lập báo cáo";
+            this.btnLapbaocao.UseVisualStyleBackColor = false;
+            this.btnLapbaocao.Click += new System.EventHandler(this.btnLapbaocao_Click);
             // 
             // DoanhThu
             // 
@@ -120,6 +141,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1133, 651);
+            this.Controls.Add(this.btnLapbaocao);
             this.Controls.Add(this.cbxDate);
             this.Controls.Add(this.chartDoanhthu);
             this.Controls.Add(this.panel1);
@@ -140,5 +162,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDoanhthu;
         private System.Windows.Forms.ComboBox cbxDate;
+        private FontAwesome.Sharp.IconButton btnLapbaocao;
     }
 }
