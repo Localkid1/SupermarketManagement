@@ -1,17 +1,11 @@
-﻿using Microsoft.Office.Interop.Excel;
+﻿using SupermarketManagement.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using Microsoft.Office.Interop.Word;
-using System.CodeDom;
 
 namespace SupermarketManagement.GUI
 {
@@ -27,11 +21,11 @@ namespace SupermarketManagement.GUI
         {
 
             SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand("SELECT DAY(InvoiceDate) AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 WHERE DATEPART(month, InvoiceDate) = 3 GROUP BY DAY(InvoiceDate) ORDER BY DAY(InvoiceDate)", connection);
+            SqlCommand cmd = new SqlCommand("SELECT DAY(InvoiceDate) AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 WHERE DATEPART(month, InvoiceDate) = 4 GROUP BY DAY(InvoiceDate) ORDER BY DAY(InvoiceDate)", connection);
             connection.Open();
             SqlDataReader reader = cmd.ExecuteReader();
 
-            System.Windows.Forms.DataVisualization.Charting.Series series = new System.Windows.Forms.DataVisualization.Charting.Series("Doanh thu");
+            System.Windows.Forms.DataVisualization.Charting.Series series = new System.Windows.Forms.DataVisualization.Charting.Series("Doanh thu tháng 4");
             series.ChartType = SeriesChartType.Column;
 
             for (int i = 1; i <= 31; i++) // Thêm 12 giá trị cho trục ngang
@@ -565,70 +559,152 @@ namespace SupermarketManagement.GUI
         {
             if (cbxDate.SelectedItem != null)
             {
-                string selectedItem = cbxDate.SelectedItem.ToString();
+                // Lấy giá trị được chọn từ combobox
+                string selectedValue = cbxDate.SelectedItem.ToString();
 
-
-                SqlConnection connection = new SqlConnection(connectionString);
-                connection.Open();
-                // Kiểm tra giá trị được chọn
-                if (selectedItem == "Ngày (Tháng 1)")
+                // Tạo câu truy vấn SQL tương ứng với giá trị được chọn từ combobox
+                string query;
+                switch (selectedValue)
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM HoaDonBan1 WHERE MONTH(InvoiceDate) = 1", connection);
-
-                    SqlDataReader reader = cmd.ExecuteReader();
-    
-                    // Đọc dữ liệu và lưu vào mảng 2 chiều
-                    int rowCount = 0;
-                    int columnCount = reader.FieldCount;
-                    object[,] data = new object[100, columnCount];
-                    while (reader.Read())
-                    {
-                        for (int i = 0; i < columnCount; i++)
-                        {
-                            data[rowCount, i] = reader[i];
-                        }
-                        rowCount++;
-                    }
-
-                    // Tạo tài liệu Word và thêm dữ liệu vào tài liệu
-                    var wordApp = new Microsoft.Office.Interop.Word.Application();
-                    var doc = wordApp.Documents.Add();
-                    doc.Content.Text = "Báo cáo từ dữ liệu ComboBox:";
-                    var table = doc.Tables.Add(doc.Range(), rowCount, columnCount);
-                    for (int i = 0; i < rowCount; i++)
-                    {
-                        for (int j = 0; j < columnCount; j++)
-                        {
-                            table.Cell(i + 1, j + 1).Range.Text = data[i, j].ToString();
-                        }
-                    }
-                    connection.Close();
-
-                    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-                    saveFileDialog1.Filter = "Word Document|*.docx";
-                    saveFileDialog1.Title = "Báo cáo doanh thu";
-                    saveFileDialog1.ShowDialog();
-
-                   
-                    if (cmd.ExecuteNonQuery() > 0)
-                    {
-                        MessageBox.Show("Thêm dữ liệu thành công!");
-                    }
-                    if (cmd.ExecuteNonQuery() == 0)
-                    {
-                        MessageBox.Show("Thêm dữ liệu thất bại!");
-                    }
-
-                    if (saveFileDialog1.FileName != "")
-                    {
-                        // Lưu tài liệu và đóng ứng dụng Word
-                        doc.SaveAs(saveFileDialog1.FileName);
-                        wordApp.Quit();
-                    }                
+                    case "Ngày (Tháng 1)":
+                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1  where MONTH(InvoiceDate) = 1";
+                        break;
+                    case "Ngày (Tháng 2)":
+                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1  where MONTH(InvoiceDate) = 2";
+                        break;
+                    case "Ngày (Tháng 3)":
+                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1 where MONTH(InvoiceDate) = 3";
+                        break;
+                    case "Ngày (Tháng 4)":
+                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1  where MONTH(InvoiceDate) = 4";
+                        break;
+                    case "Ngày (Tháng 5)":
+                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1  where MONTH(InvoiceDate) = 5";
+                        break;
+                    case "Ngày (Tháng 6)":
+                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1 where MONTH(InvoiceDate) = 6";
+                        break;
+                    case "Ngày (Tháng 7)":
+                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1 where MONTH(InvoiceDate) = 7";
+                        break;
+                    case "Ngày (Tháng 8)":
+                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1  where MONTH(InvoiceDate) = 8";
+                        break;
+                    case "Ngày (Tháng 9)":
+                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1 where MONTH(InvoiceDate) = 9";
+                        break;
+                    case "Ngày (Tháng 10)":
+                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1 where MONTH(InvoiceDate) = 10";
+                        break;
+                    case "Ngày (Tháng 11)":
+                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1  where MONTH(InvoiceDate) = 11";
+                        break;
+                    case "Ngày (Tháng 12)":
+                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1  where MONTH(InvoiceDate) = 12";
+                        break;
+                    default:
+                        MessageBox.Show("Vui lòng chọn lại mốc thời gian");
+                        return;
                 }
 
-            }
-        }
+                // Kết nối tới SQL Server
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
 
+                // Thực hiện truy vấn SQL và đọc dữ liệu vào DataTable
+                SqlCommand cmd = new SqlCommand(query, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                System.Data.DataTable dataTable = new System.Data.DataTable();
+                adapter.Fill(dataTable);
+
+                // Đóng kết nối tới SQL Server
+                connection.Close();
+
+                // Kiểm tra nếu không có dữ liệu thì hiển thị thông báo
+                if (dataTable.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu để xuất báo cáo");
+                    return;
+                }
+
+                try
+                {
+                    Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+                    Microsoft.Office.Interop.Excel.Workbook wb = app.Workbooks.Add(Type.Missing);
+                    Microsoft.Office.Interop.Excel.Worksheet ws = null;
+                    ws = wb.ActiveSheet;
+                    ws.Name = "Doanh thu";
+                    // Đặt kích thước cột đầu tiên là 50
+                    ws.Range["A:A"].ColumnWidth = 35;
+
+                    // Đặt kích thước các cột khác là 40
+                    ws.Range["B:XFD"].ColumnWidth = 25;
+
+                    ws.Cells[1, 1].Value = "Báo cáo doanh thu:";
+                    // Set font style for a range of cells
+                    ws.Cells[1, 1].Style.Font.Bold = true;
+                    ws.Cells[1, 1].Style.Font.Size = 20;
+
+
+                    ws.Cells[3, 1].Value = "Tên và số lượng sản phẩm";
+                    ws.Cells[3, 1].Style.Font.Bold = false;
+                    ws.Cells[3, 1].Style.Font.Size = 12;
+
+                    ws.Cells[3, 2].Value = "Doanh thu";
+                    ws.Cells[3, 2].Style.Font.Bold = true;
+                    ws.Cells[3, 2].Style.Font.Size = 12;
+
+
+
+                    // Thiết lập lại thuộc tính mặc định cho các ô khác
+
+                    //  ws.Cells[3, 3].Value = "Email";
+                    // Tiếp tục thêm tiêu đề cho các cột khác
+
+                    for (int i = 0; i < dataTable.Rows.Count; i++)
+                    {
+                        ws.Cells[i + 4, 1].Value = dataTable.Rows[i]["InvoiceInformation"];
+                        ws.Cells[i + 4, 1].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center; // Canh giữa dữ liệu trong ô
+                        ws.Cells[i + 4, 2].Value = dataTable.Rows[i]["TotalAmount1"];
+                        ws.Cells[i + 4, 2].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center; // Canh giữa dữ liệu trong ô
+                        // Tiếp tục ghi dữ liệu cho các cột khác
+                    }
+
+
+
+                    // Ghi tiêu đề cột
+
+                    // Lưu file và đóng workbook và application
+                    SaveFileDialog saveDialog = new SaveFileDialog();
+                    saveDialog.Filter = "Excel Workbook|*.xlsx";
+                    saveDialog.Title = "Save Excel file";
+                    saveDialog.InitialDirectory = "C:\\Users\\Admin\\Documents\\Excel";
+                    saveDialog.ShowDialog();
+
+
+                    if (saveDialog.FileName != "")
+                    {
+                        wb.SaveAs(saveDialog.FileName);
+                        MessageBox.Show("Đã lưu file thành công!");
+                    }
+
+
+                    wb.Close();
+                    app.Quit();
+                    Marshal.ReleaseComObject(ws);
+                    Marshal.ReleaseComObject(wb);
+                    Marshal.ReleaseComObject(app);
+                
+
+                    // Hiển thị thông báo khi lưu file thành công
+                  //  MessageBox.Show("Lưu file báo cáo thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi: {ex.Message}");
+
+                }
+            }
+        }            
     }
 }

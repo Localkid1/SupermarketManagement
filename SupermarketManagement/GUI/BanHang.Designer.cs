@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BanHang));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblNhanvien = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -67,12 +68,22 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.panel1.Controls.Add(this.lblNhanvien);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(1, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1556, 71);
             this.panel1.TabIndex = 3;
+            // 
+            // lblNhanvien
+            // 
+            this.lblNhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNhanvien.ForeColor = System.Drawing.Color.White;
+            this.lblNhanvien.Location = new System.Drawing.Point(1016, 18);
+            this.lblNhanvien.Name = "lblNhanvien";
+            this.lblNhanvien.Size = new System.Drawing.Size(259, 29);
+            this.lblNhanvien.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -440,5 +451,6 @@
         private FontAwesome.Sharp.IconButton btnThemsanpham;
         private System.Windows.Forms.DateTimePicker dtpNgayhoadon;
         private FontAwesome.Sharp.IconButton btnLuuhoadon;
+        private System.Windows.Forms.Label lblNhanvien;
     }
 }

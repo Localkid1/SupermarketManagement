@@ -279,16 +279,16 @@
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.IconChar = FontAwesome.Sharp.IconChar.Add;
+            this.btnClear.IconChar = FontAwesome.Sharp.IconChar.Repeat;
             this.btnClear.IconColor = System.Drawing.Color.White;
             this.btnClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClear.IconSize = 30;
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(295, 442);
+            this.btnClear.Location = new System.Drawing.Point(284, 442);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(129, 53);
+            this.btnClear.Size = new System.Drawing.Size(142, 53);
             this.btnClear.TabIndex = 8;
-            this.btnClear.Text = "Xóa trắng";
+            this.btnClear.Text = "Nhập lại";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 

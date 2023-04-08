@@ -119,6 +119,8 @@
             // 
             // btnLapbaocao
             // 
+
+           
             this.btnLapbaocao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
             this.btnLapbaocao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLapbaocao.ForeColor = System.Drawing.Color.White;
