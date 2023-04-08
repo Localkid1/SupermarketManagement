@@ -70,7 +70,10 @@ namespace SupermarketManagement.GUI
             dataGridViewSpNhanvien.Columns[3].HeaderText = "Số lượng";
             dataGridViewSpNhanvien.Columns[4].HeaderText = "Giá";
 
-          
+
+           //EmployeeName();
+
+
 
 
 
@@ -78,7 +81,33 @@ namespace SupermarketManagement.GUI
             con.Close();
             load_data();
         }
+        
+        void EmployeeName()
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=db.Supermarket;Integrated Security=True");
+            SqlCommand cmd = new SqlCommand("SELECT EmployeeName FROM Nhanvien WHERE EmployeeName = 'Nguyễn Thị A'", con);
+            SqlCommand cmd1 = new SqlCommand("SELECT username FROM TaiKhoan WHERE username = 'nhanvien'", con);
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            
+            con.Open();
+            SqlDataReader reader1 = cmd1.ExecuteReader();
+            if (reader.HasRows && reader1.HasRows)
+            {   
+                
+                while (reader.Read() && reader1.Read())
+                {
+                    lblNhanvien.Text = reader1.GetString(0); // gán giá trị "Nguyen Van A" vào lblNhanvien
+                }
+            }
+            else
+            {
+                lblNhanvien.Text = "";
+            }
+            con.Close();
+            con.Close();
 
+        }
         private void dataGridViewSpNhanvien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridViewSpNhanvien.CurrentRow != null)
