@@ -123,6 +123,12 @@ namespace SupermarketManagement.GUI
             ws = wb.ActiveSheet;
             ws.Name = "Danh sách sản phẩm";
 
+            ws.Range["A:A"].ColumnWidth = 20;
+
+            // Đặt kích thước các cột khác là 40
+            ws.Range["B:XFD"].ColumnWidth = 25;
+
+
             // Ghi tiêu đề cột
             int columnIndex = 1;
             foreach (DataGridViewColumn column in dataGridViewSanpham.Columns)
