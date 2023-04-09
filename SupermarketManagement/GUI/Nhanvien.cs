@@ -192,10 +192,10 @@ namespace SupermarketManagement.GUI
             ws = wb.ActiveSheet;
             ws.Name = "Danh sách nhân viên";
             // Đặt kích thước cột đầu tiên là 50
-            ws.Range["A:A"].ColumnWidth = 20;
+            ws.Range["A:A"].ColumnWidth = 30;
 
             // Đặt kích thước các cột khác là 40
-            ws.Range["B:XFD"].ColumnWidth =25;
+            ws.Range["B:XFD"].ColumnWidth = 25;
 
 
             // Ghi tiêu đề cột
