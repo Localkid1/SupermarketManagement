@@ -89,11 +89,15 @@ namespace SupermarketManagement.GUI
             Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook wb = app.Workbooks.Add(Type.Missing);
             Microsoft.Office.Interop.Excel.Worksheet ws = null;
-                ws = wb.ActiveSheet;
-                ws.Name = "Danh sách nhà cung cấp";
+            ws = wb.ActiveSheet;
+            ws.Name = "Danh sách nhà cung cấp";
+            ws.Range["A:A"].ColumnWidth = 30;
 
-                // Ghi tiêu đề cột
-                int columnIndex = 1;
+            // Đặt kích thước các cột khác là 40
+            ws.Range["B:XFD"].ColumnWidth = 25;
+
+            // Ghi tiêu đề cột
+            int columnIndex = 1;
                 foreach (DataGridViewColumn column in dataGridViewNhacungcap.Columns)
                 {
                     ws.Cells[1, columnIndex] = column.HeaderText;
@@ -121,7 +125,7 @@ namespace SupermarketManagement.GUI
                 SaveFileDialog saveDialog = new SaveFileDialog();
                 saveDialog.Filter = "Excel Workbook|*.xlsx";
                 saveDialog.Title = "Save Excel file";
-            saveDialog.InitialDirectory = "C:\\Users\\Admin\\Documents\\Excel";
+                saveDialog.InitialDirectory = "C:\\Users\\Admin\\Documents\\Excel";
                 saveDialog.ShowDialog();
                
 
