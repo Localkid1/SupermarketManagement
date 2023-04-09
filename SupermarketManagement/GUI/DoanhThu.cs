@@ -567,40 +567,40 @@ namespace SupermarketManagement.GUI
                 switch (selectedValue)
                 {
                     case "Ngày (Tháng 1)":
-                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1  where MONTH(InvoiceDate) = 1";
+                        query = "SELECT InvoiceDate AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 WHERE DATEPART(month, InvoiceDate) = 1 GROUP BY InvoiceDate ORDER BY InvoiceDate";
                         break;
                     case "Ngày (Tháng 2)":
-                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1  where MONTH(InvoiceDate) = 2";
+                        query = "SELECT InvoiceDate AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 WHERE DATEPART(month, InvoiceDate) = 2 GROUP BY InvoiceDate ORDER BY InvoiceDate";
                         break;
                     case "Ngày (Tháng 3)":
-                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1 where MONTH(InvoiceDate) = 3";
+                        query = "SELECT InvoiceDate AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 WHERE DATEPART(month, InvoiceDate) = 3 GROUP BY InvoiceDate ORDER BY InvoiceDate";
                         break;
                     case "Ngày (Tháng 4)":
-                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1  where MONTH(InvoiceDate) = 4";
+                        query = "SELECT InvoiceDate AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 WHERE DATEPART(month, InvoiceDate) = 4 GROUP BY InvoiceDate ORDER BY InvoiceDate";
                         break;
                     case "Ngày (Tháng 5)":
-                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1  where MONTH(InvoiceDate) = 5";
+                        query = "SELECT InvoiceDate AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 WHERE DATEPART(month, InvoiceDate) = 5 GROUP BY InvoiceDate ORDER BY InvoiceDate";
                         break;
                     case "Ngày (Tháng 6)":
-                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1 where MONTH(InvoiceDate) = 6";
+                        query = "SELECT InvoiceDate AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 WHERE DATEPART(month, InvoiceDate) = 6 GROUP BY InvoiceDate ORDER BY InvoiceDate";
                         break;
                     case "Ngày (Tháng 7)":
-                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1 where MONTH(InvoiceDate) = 7";
+                        query = "SELECT InvoiceDate AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 WHERE DATEPART(month, InvoiceDate) = 7 GROUP BY InvoiceDate ORDER BY InvoiceDate";
                         break;
                     case "Ngày (Tháng 8)":
-                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1  where MONTH(InvoiceDate) = 8";
+                        query = "SELECT InvoiceDate AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 WHERE DATEPART(month, InvoiceDate) = 8 GROUP BY InvoiceDate ORDER BY InvoiceDate";
                         break;
                     case "Ngày (Tháng 9)":
-                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1 where MONTH(InvoiceDate) = 9";
+                        query = "SELECT InvoiceDate AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 WHERE DATEPART(month, InvoiceDate) = 9 GROUP BY InvoiceDate ORDER BY InvoiceDate";
                         break;
                     case "Ngày (Tháng 10)":
-                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1 where MONTH(InvoiceDate) = 10";
+                        query = "SELECT InvoiceDate AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 WHERE DATEPART(month, InvoiceDate) = 10 GROUP BY InvoiceDate ORDER BY InvoiceDate";
                         break;
                     case "Ngày (Tháng 11)":
-                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1  where MONTH(InvoiceDate) = 11";
+                        query = "SELECT InvoiceDate AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 WHERE DATEPART(month, InvoiceDate) = 11 GROUP BY InvoiceDate ORDER BY InvoiceDate";
                         break;
                     case "Ngày (Tháng 12)":
-                        query = "select HoaDonBan1.InvoiceInformation, TotalAmount1 from HoaDonBan1  where MONTH(InvoiceDate) = 12";
+                        query = "SELECT InvoiceDate AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 WHERE DATEPART(month, InvoiceDate) = 12 GROUP BY InvoiceDate ORDER BY InvoiceDate";
                         break;
                     default:
                         MessageBox.Show("Vui lòng chọn lại mốc thời gian");
@@ -640,39 +640,101 @@ namespace SupermarketManagement.GUI
                     // Đặt kích thước các cột khác là 40
                     ws.Range["B:XFD"].ColumnWidth = 25;
 
-                    ws.Cells[1, 1].Value = "Báo cáo doanh thu:";
-                    // Set font style for a range of cells
-                    ws.Cells[1, 1].Style.Font.Bold = true;
-                    ws.Cells[1, 1].Style.Font.Size = 20;
-
-
-                    ws.Cells[3, 1].Value = "Tên và số lượng sản phẩm";
-                    ws.Cells[3, 1].Style.Font.Bold = false;
-                    ws.Cells[3, 1].Style.Font.Size = 12;
-
+                   
+                    switch (selectedValue)
+                    {
+                        case "Ngày (Tháng 1)":
+                            ws.Cells[1, 1].Value = "Báo cáo doanh thu tháng 1:";
+                            // Set font style for a range of cells
+                            ws.Cells[1, 1].Style.Font.Bold = false;
+                            ws.Cells[1, 1].Style.Font.Size = 20;
+                            break;
+                        case "Ngày (Tháng 2)":
+                            ws.Cells[1, 1].Value = "Báo cáo doanh thu tháng 2:";
+                            // Set font style for a range of cells
+                            ws.Cells[1, 1].Style.Font.Bold = false;
+                            ws.Cells[1, 1].Style.Font.Size = 20;
+                            break;
+                        case "Ngày (Tháng 3)":
+                            ws.Cells[1, 1].Value = "Báo cáo doanh thu tháng 3:";
+                            // Set font style for a range of cells
+                            ws.Cells[1, 1].Style.Font.Bold = false;
+                            ws.Cells[1, 1].Style.Font.Size = 20;
+                            break;
+                        case "Ngày (Tháng 4)":
+                            ws.Cells[1, 1].Value = "Báo cáo doanh thu tháng 4:";
+                            // Set font style for a range of cells
+                            ws.Cells[1, 1].Style.Font.Bold = false;
+                            ws.Cells[1, 1].Style.Font.Size = 20;
+                            break;
+                        case "Ngày (Tháng 5)":
+                            ws.Cells[1, 1].Value = "Báo cáo doanh thu tháng 5:";
+                            // Set font style for a range of cells
+                            ws.Cells[1, 1].Style.Font.Bold = false;
+                            ws.Cells[1, 1].Style.Font.Size = 20;
+                            break;
+                        case "Ngày (Tháng 6)":
+                            ws.Cells[1, 1].Value = "Báo cáo doanh thu tháng 6:";
+                            // Set font style for a range of cells
+                            ws.Cells[1, 1].Style.Font.Bold = false;
+                            ws.Cells[1, 1].Style.Font.Size = 20;
+                            break;
+                        case "Ngày (Tháng 7)":
+                            ws.Cells[1, 1].Value = "Báo cáo doanh thu tháng 7:";
+                            // Set font style for a range of cells
+                            ws.Cells[1, 1].Style.Font.Bold = false;
+                            ws.Cells[1, 1].Style.Font.Size = 20;
+                            break;
+                        case "Ngày (Tháng 8)":
+                            ws.Cells[1, 1].Value = "Báo cáo doanh thu tháng 8:";
+                            // Set font style for a range of cells
+                            ws.Cells[1, 1].Style.Font.Bold = false;
+                            ws.Cells[1, 1].Style.Font.Size = 20;
+                            break;
+                        case "Ngày (Tháng 9)":
+                            ws.Cells[1, 1].Value = "Báo cáo doanh thu tháng 9:";
+                            // Set font style for a range of cells
+                            ws.Cells[1, 1].Style.Font.Bold = false;
+                            ws.Cells[1, 1].Style.Font.Size = 20;
+                            break;
+                        case "Ngày (Tháng 10)":
+                            ws.Cells[1, 1].Value = "Báo cáo doanh thu tháng 10:";
+                            // Set font style for a range of cells
+                            ws.Cells[1, 1].Style.Font.Bold = true;
+                            ws.Cells[1, 1].Style.Font.Size = 20;
+                            break;
+                        case "Ngày (Tháng 11)":
+                            ws.Cells[1, 1].Value = "Báo cáo doanh thu tháng 11:";
+                            // Set font style for a range of cells
+                            ws.Cells[1, 1].Style.Font.Bold = false;
+                            ws.Cells[1, 1].Style.Font.Size = 20;
+                            break;
+                        case "Ngày (Tháng 12)":
+                            ws.Cells[1, 1].Value = "Báo cáo doanh thu tháng 12:";
+                            // Set font style for a range of cells
+                            ws.Cells[1, 1].Style.Font.Bold = false;
+                            ws.Cells[1, 1].Style.Font.Size = 20;
+                            break;
+                        default:
+                            MessageBox.Show("Vui lòng chọn lại mốc thời gian");
+                            return;
+                    }
+                 
+                    ws.Cells[3, 1].Value = "Thời gian";                  
                     ws.Cells[3, 2].Value = "Doanh thu";
-                    ws.Cells[3, 2].Style.Font.Bold = true;
-                    ws.Cells[3, 2].Style.Font.Size = 12;
-
-
-
-                    // Thiết lập lại thuộc tính mặc định cho các ô khác
-
-                    //  ws.Cells[3, 3].Value = "Email";
+                              
                     // Tiếp tục thêm tiêu đề cho các cột khác
 
                     for (int i = 0; i < dataTable.Rows.Count; i++)
                     {
-                        ws.Cells[i + 4, 1].Value = dataTable.Rows[i]["InvoiceInformation"];
-                        ws.Cells[i + 4, 1].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center; // Canh giữa dữ liệu trong ô
-                        ws.Cells[i + 4, 2].Value = dataTable.Rows[i]["TotalAmount1"];
+                        ws.Cells[i + 4, 1].Value = dataTable.Rows[i]["Ngay"];
+                        ws.Cells[i + 4, 1].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                        ws.Cells[i + 4, 1].Style.Font.Size = 12;// Canh giữa dữ liệu trong ô
+                        ws.Cells[i + 4, 2].Value = dataTable.Rows[i]["TongTien"];
                         ws.Cells[i + 4, 2].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center; // Canh giữa dữ liệu trong ô
+                        ws.Cells[i + 4, 2].Style.Font.Size = 12;
                         // Tiếp tục ghi dữ liệu cho các cột khác
                     }
-
-
-
-                    // Ghi tiêu đề cột
 
                     // Lưu file và đóng workbook và application
                     SaveFileDialog saveDialog = new SaveFileDialog();
