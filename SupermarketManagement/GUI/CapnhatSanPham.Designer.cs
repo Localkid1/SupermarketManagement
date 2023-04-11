@@ -31,7 +31,6 @@
             this.txtMasanpham = new System.Windows.Forms.TextBox();
             this.txtTensanpham = new System.Windows.Forms.TextBox();
             this.txtGia = new System.Windows.Forms.TextBox();
-            this.txtSoluong = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,13 +43,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtNoisanxuat = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtDonvitinh = new System.Windows.Forms.TextBox();
             this.btnXoasanpham = new FontAwesome.Sharp.IconButton();
             this.btnClear = new FontAwesome.Sharp.IconButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtChatluong = new System.Windows.Forms.TextBox();
+            this.txtSoluong = new System.Windows.Forms.TextBox();
+            this.cbxTennhacungcap = new System.Windows.Forms.ComboBox();
+            this.cbxNoisanxuat = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +67,7 @@
             // 
             // txtTensanpham
             // 
-            this.txtTensanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.txtTensanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtTensanpham.Location = new System.Drawing.Point(179, 186);
             this.txtTensanpham.Multiline = true;
             this.txtTensanpham.Name = "txtTensanpham";
@@ -76,21 +76,12 @@
             // 
             // txtGia
             // 
-            this.txtGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.txtGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtGia.Location = new System.Drawing.Point(179, 248);
             this.txtGia.Multiline = true;
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(225, 38);
             this.txtGia.TabIndex = 0;
-            // 
-            // txtSoluong
-            // 
-            this.txtSoluong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.txtSoluong.Location = new System.Drawing.Point(711, 119);
-            this.txtSoluong.Multiline = true;
-            this.txtSoluong.Name = "txtSoluong";
-            this.txtSoluong.Size = new System.Drawing.Size(225, 38);
-            this.txtSoluong.TabIndex = 0;
             // 
             // label1
             // 
@@ -144,12 +135,12 @@
             // 
             // dtpNgayhethan
             // 
-            this.dtpNgayhethan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.dtpNgayhethan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dtpNgayhethan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayhethan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtpNgayhethan.Location = new System.Drawing.Point(711, 259);
+            this.dtpNgayhethan.Location = new System.Drawing.Point(721, 259);
             this.dtpNgayhethan.Name = "dtpNgayhethan";
-            this.dtpNgayhethan.Size = new System.Drawing.Size(225, 27);
+            this.dtpNgayhethan.Size = new System.Drawing.Size(225, 30);
             this.dtpNgayhethan.TabIndex = 7;
             // 
             // btnThemsanpham
@@ -229,15 +220,6 @@
             this.label8.TabIndex = 3;
             this.label8.Text = "Nơi sản xuất";
             // 
-            // txtNoisanxuat
-            // 
-            this.txtNoisanxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.txtNoisanxuat.Location = new System.Drawing.Point(179, 313);
-            this.txtNoisanxuat.Multiline = true;
-            this.txtNoisanxuat.Name = "txtNoisanxuat";
-            this.txtNoisanxuat.Size = new System.Drawing.Size(225, 38);
-            this.txtNoisanxuat.TabIndex = 0;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -250,8 +232,8 @@
             // 
             // txtDonvitinh
             // 
-            this.txtDonvitinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.txtDonvitinh.Location = new System.Drawing.Point(711, 313);
+            this.txtDonvitinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtDonvitinh.Location = new System.Drawing.Point(721, 313);
             this.txtDonvitinh.Multiline = true;
             this.txtDonvitinh.Name = "txtDonvitinh";
             this.txtDonvitinh.Size = new System.Drawing.Size(225, 38);
@@ -299,18 +281,45 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.label5.Location = new System.Drawing.Point(567, 204);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 20);
+            this.label5.Size = new System.Drawing.Size(142, 20);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Chất lượng";
+            this.label5.Text = "Tên nhà cung cấp";
             // 
-            // txtChatluong
+            // txtSoluong
             // 
-            this.txtChatluong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.txtChatluong.Location = new System.Drawing.Point(711, 186);
-            this.txtChatluong.Multiline = true;
-            this.txtChatluong.Name = "txtChatluong";
-            this.txtChatluong.Size = new System.Drawing.Size(225, 38);
-            this.txtChatluong.TabIndex = 0;
+            this.txtSoluong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtSoluong.Location = new System.Drawing.Point(721, 119);
+            this.txtSoluong.Multiline = true;
+            this.txtSoluong.Name = "txtSoluong";
+            this.txtSoluong.Size = new System.Drawing.Size(225, 38);
+            this.txtSoluong.TabIndex = 0;
+            // 
+            // cbxTennhacungcap
+            // 
+            this.cbxTennhacungcap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbxTennhacungcap.FormattingEnabled = true;
+            this.cbxTennhacungcap.Items.AddRange(new object[] {
+            "Đa Lộc",
+            "Dương Nội",
+            "Như Quỳnh",
+            "Ngọc Linh"});
+            this.cbxTennhacungcap.Location = new System.Drawing.Point(721, 189);
+            this.cbxTennhacungcap.Name = "cbxTennhacungcap";
+            this.cbxTennhacungcap.Size = new System.Drawing.Size(225, 33);
+            this.cbxTennhacungcap.TabIndex = 13;
+            // 
+            // cbxNoisanxuat
+            // 
+            this.cbxNoisanxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbxNoisanxuat.FormattingEnabled = true;
+            this.cbxNoisanxuat.Items.AddRange(new object[] {
+            "Hà Nội",
+            "Thái Nguyên",
+            "Bắc Giang"});
+            this.cbxNoisanxuat.Location = new System.Drawing.Point(179, 318);
+            this.cbxNoisanxuat.Name = "cbxNoisanxuat";
+            this.cbxNoisanxuat.Size = new System.Drawing.Size(225, 33);
+            this.cbxNoisanxuat.TabIndex = 13;
             // 
             // ThemSanPham
             // 
@@ -318,6 +327,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1016, 536);
+            this.Controls.Add(this.cbxNoisanxuat);
+            this.Controls.Add(this.cbxTennhacungcap);
             this.Controls.Add(this.btnXoasanpham);
             this.Controls.Add(this.txtDonvitinh);
             this.Controls.Add(this.panel1);
@@ -332,11 +343,9 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtNoisanxuat);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtGia);
             this.Controls.Add(this.txtTensanpham);
-            this.Controls.Add(this.txtChatluong);
             this.Controls.Add(this.txtSoluong);
             this.Controls.Add(this.txtMasanpham);
             this.MaximizeBox = false;
@@ -359,7 +368,6 @@
         private System.Windows.Forms.TextBox txtMasanpham;
         private System.Windows.Forms.TextBox txtTensanpham;
         private System.Windows.Forms.TextBox txtGia;
-        private System.Windows.Forms.TextBox txtSoluong;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -372,12 +380,13 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtNoisanxuat;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtDonvitinh;
         private FontAwesome.Sharp.IconButton btnXoasanpham;
         private FontAwesome.Sharp.IconButton btnClear;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtChatluong;
+        private System.Windows.Forms.TextBox txtSoluong;
+        private System.Windows.Forms.ComboBox cbxTennhacungcap;
+        private System.Windows.Forms.ComboBox cbxNoisanxuat;
     }
 }

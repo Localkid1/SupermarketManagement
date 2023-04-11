@@ -45,15 +45,16 @@ namespace SupermarketManagement.GUI
             dataGridViewSanpham.RowTemplate.Height = 45;
             dataGridViewSanpham.DataSource = dt;
             dataGridViewSanpham.Columns[0].Width = 150;
-            dataGridViewSanpham.Columns[5].Width = 200;
+            dataGridViewSanpham.Columns[4].Width = 150;
+            dataGridViewSanpham.Columns[5].Width = 150;
             dataGridViewSanpham.Columns[6].Width = 200;
-            dataGridViewSanpham.Columns[7].Width = 200;
+            dataGridViewSanpham.Columns[7].Width = 140;
 
             dataGridViewSanpham.Columns[0].HeaderText = "Mã sản phẩm";
             dataGridViewSanpham.Columns[1].HeaderText = "Tên sản phẩm";
             dataGridViewSanpham.Columns[2].HeaderText = "Số lượng";
             dataGridViewSanpham.Columns[3].HeaderText = "Giá";
-            dataGridViewSanpham.Columns[4].HeaderText = "Chất lượng";
+            dataGridViewSanpham.Columns[4].HeaderText = "Tên nhà cung cấp";
             dataGridViewSanpham.Columns[5].HeaderText = "Ngày hết hạn";
             dataGridViewSanpham.Columns[6].HeaderText = "Nơi sản xuất";
             dataGridViewSanpham.Columns[7].HeaderText = "Đơn vị tính";

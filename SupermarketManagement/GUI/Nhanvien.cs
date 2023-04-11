@@ -37,37 +37,7 @@ namespace SupermarketManagement.GUI
             da.Fill(dt);
             con.Close();
         }
-        /*
-        public string tangHD()
-        {
-            string sql = "select *  from  hoadon ";
-            DataTable dt = new DataTable();
-            dt = da.getTable(sql);
-            string ma = "";
-            if (dt.Rows.Count <= 0)
-            {
-                ma = "HD001";
-            }
-            else
-            {
-                int k;
-                ma = "HD";
-                k = Convert.ToInt32(dt.Rows[dt.Rows.Count - 1][0].ToString().Substring(2, 3));
-                k = k + 1;
-                if (k < 10)
-                {
-                    ma = ma + "00";
-                }
-                else if (k < 100)
-                {
-                    ma = ma + "0";
-                }
-                ma = ma + k.ToString();
-            }
-            return ma;
-        }
-        */
-
+        
         private void btnThemnhanvien_Click(object sender, EventArgs e)
         {
             NhanvienDTO employee = new NhanvienDTO();
@@ -145,16 +115,20 @@ namespace SupermarketManagement.GUI
             employee.Address = txtDiachi.Text;
             employee.PhoneNumber = txtSodienthoai.Text;
 
-            if (employeeBUS.DeleteEmployee(employee))
+            if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo))
             {
-                MessageBox.Show("Xóa nhân viên thành công");
-                Nhanvien_Load(sender, e);
-                btnClear_Click(sender, e);
+                if (employeeBUS.DeleteEmployee(employee))
+                {
+                    MessageBox.Show("Xóa nhân viên thành công");
+                    Nhanvien_Load(sender, e);
+                    btnClear_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa nhân viên thất bại");
+                }
             }
-            else
-            {
-                MessageBox.Show("Xóa nhân viên thất bại");
-            }
+          
         }
 
         private void btnClear_Click(object sender, EventArgs e)

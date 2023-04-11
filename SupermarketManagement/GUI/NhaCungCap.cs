@@ -30,16 +30,20 @@ namespace SupermarketManagement.GUI
             supplier.Address = txtDiachi.Text;
             supplier.PhoneNumber = txtSodienthoai.Text;
 
-            if (supplierBUS.DeleteSupplier(supplier))
+            if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo))
             {
-                MessageBox.Show("Xóa nhà cung cấp thành công");
-                NhaCungCap_Load(sender, e);
-                btnClear_Click(sender, e);
+                if (supplierBUS.DeleteSupplier(supplier))
+                {
+                    MessageBox.Show("Xóa nhà cung cấp thành công");
+                    NhaCungCap_Load(sender, e);
+                    btnClear_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa nhà cung cấp thất bại");
+                }
             }
-            else
-            {
-                MessageBox.Show("Xóa nhà cung cấp thất bại");
-            }
+          
         }
 
      

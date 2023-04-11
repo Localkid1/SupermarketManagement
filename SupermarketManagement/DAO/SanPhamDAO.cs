@@ -96,9 +96,9 @@ namespace SupermarketManagement.DAO
 
                     return rowsAffected > 0;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                MessageBox.Show("Error: " + ex.Message);
+                //MessageBox.Show("Error: " + ex.Message);
                     return false;
                 }
             }
@@ -134,7 +134,8 @@ namespace SupermarketManagement.DAO
         public bool DeleteProduct(SanPhamDTO product)
         {
             try
-            {
+            {   
+
                 SqlCommand cmd = new SqlCommand("DELETE FROM SanPham WHERE ProductID = @ProductID", conn);
                 cmd.Parameters.AddWithValue("@ProductID", product.ProductID);
 

@@ -49,13 +49,13 @@ namespace SupermarketManagement.GUI
                 sanPham.ProductName = txtTensanpham.Text;
                 sanPham.ProductIndex = Convert.ToInt32(txtSoluong.Text);
                 sanPham.Price = Convert.ToInt32(txtGia.Text);
-               sanPham.Quanlity = txtChatluong.Text;
+                sanPham.Quanlity = cbxTennhacungcap.Text;
                 sanPham.ExpirationDate = dtpNgayhethan.Value;
-                sanPham.ProductPlace = txtNoisanxuat.Text;
+                sanPham.ProductPlace = cbxNoisanxuat.Text;
                 sanPham.Unit = txtDonvitinh.Text;
 
-              
-                if (sanPhamBUS.AddProduct(sanPham))
+           
+            if (sanPhamBUS.AddProduct(sanPham))
                 {
                     MessageBox.Show("Thêm sản phẩm thành công");
                     ThemSanPham_Load(sender, e);
@@ -76,9 +76,9 @@ namespace SupermarketManagement.GUI
             sanPham.ProductName = txtTensanpham.Text;
             sanPham.ProductIndex = Convert.ToInt32(txtSoluong.Text);
             sanPham.Price = Convert.ToInt32(txtGia.Text);
-            sanPham.Quanlity = txtChatluong.Text;
+            sanPham.Quanlity = cbxTennhacungcap.Text;
             sanPham.ExpirationDate = dtpNgayhethan.Value;
-            sanPham.ProductPlace = txtNoisanxuat.Text;
+            sanPham.ProductPlace = cbxNoisanxuat.Text;
             sanPham.Unit = txtDonvitinh.Text;
 
             if (sanPhamBUS.UpdateProduct(sanPham))
@@ -99,36 +99,39 @@ namespace SupermarketManagement.GUI
             sanPham.ProductName = txtTensanpham.Text;
             sanPham.ProductIndex = Convert.ToInt32(txtSoluong.Text);
             sanPham.Price = Convert.ToInt32(txtGia.Text);
-            sanPham.Quanlity = txtChatluong.Text;
+            sanPham.Quanlity = cbxTennhacungcap.Text;
             sanPham.ExpirationDate = dtpNgayhethan.Value;
-            sanPham.ProductPlace = txtNoisanxuat.Text;
+            sanPham.ProductPlace = cbxNoisanxuat.Text;
             sanPham.Unit = txtDonvitinh.Text;
 
-            if (sanPhamBUS.DeleteProduct(sanPham))
+            if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo))
             {
-                MessageBox.Show("Xóa sản phẩm thành công");
-                ThemSanPham_Load(sender, e);
-                btnClear_Click(sender, e);
+                if (sanPhamBUS.DeleteProduct(sanPham))
+                {
+                    MessageBox.Show("Xóa sản phẩm thành công");
+                    ThemSanPham_Load(sender, e);
+                    btnClear_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa sản phẩm thất bại");
+                }
             }
-            else
-            {
-                MessageBox.Show("Xóa sản phẩm thất bại");
-            }
+          
         }
 
         private void ThemSanPham_Load(object sender, EventArgs e)
         {
            
-
             if (SanPham.selectedRow != null) 
             {
                 txtMasanpham.Text = SanPham.selectedRow.Cells[0].Value.ToString();
                 txtTensanpham.Text = SanPham.selectedRow.Cells[1].Value.ToString();
                 txtSoluong.Text = SanPham.selectedRow.Cells[2].Value.ToString();
                 txtGia.Text = SanPham.selectedRow.Cells[3].Value.ToString();
-                txtChatluong.Text = SanPham.selectedRow.Cells[4].Value.ToString();
+                cbxTennhacungcap.Text = SanPham.selectedRow.Cells[4].Value.ToString();
                 dtpNgayhethan.Text = SanPham.selectedRow.Cells[5].Value.ToString();
-                txtNoisanxuat.Text = SanPham.selectedRow.Cells[6].Value.ToString();
+                cbxNoisanxuat.Text = SanPham.selectedRow.Cells[6].Value.ToString();
                 txtDonvitinh.Text = SanPham.selectedRow.Cells[7].Value.ToString();
             }
             else 
@@ -137,9 +140,9 @@ namespace SupermarketManagement.GUI
                 txtTensanpham.Text = "";
                 txtSoluong.Text = "";
                 txtGia.Text = "";
-                txtChatluong.Text = "";
+                cbxTennhacungcap.Text = "";
                 dtpNgayhethan.Text = "";
-                txtNoisanxuat.Text = "";
+                cbxNoisanxuat.Text = "";
                 txtDonvitinh.Text = "";
             }
         }
@@ -151,9 +154,9 @@ namespace SupermarketManagement.GUI
             txtTensanpham.Clear();
             txtSoluong.Clear();
             txtGia.Clear();
-            txtChatluong.Text = "";
+            cbxTennhacungcap.Text = "";
             dtpNgayhethan.Text = "";
-            txtNoisanxuat.Clear();
+            cbxNoisanxuat.Text = "";
             txtDonvitinh.Clear();
             
         }
