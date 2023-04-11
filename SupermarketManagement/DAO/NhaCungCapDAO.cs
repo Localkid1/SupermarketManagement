@@ -47,14 +47,38 @@ namespace SupermarketManagement.DAO
             return supplier;
         }
 
+        private int GetOrderCount()
+        {
+            int count = 0;
+            // Tạo kết nối đến cơ sở dữ liệu
 
+            conn.Open();
+            // Tạo câu lệnh SQL để lấy số lượng nhân viên
+            string sql = "SELECT COUNT(*) FROM NhaCungCap";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            // Thực thi câu lệnh SQL và lấy kết quả
+            count = (int)cmd.ExecuteScalar();
+
+
+            // Đóng kết nối
+            conn.Close();
+
+            return count;
+        }
         public bool AddSupplier(NhaCungCapDTO supplier)
         {
             try
             {
+                int count = 0;
+                // Lấy số lượng nhân viên hiện có trong cơ sở dữ liệu
+                count = GetOrderCount();
+
+                // Tính toán mã nhân viên mới
+                string newOrderID = "NCC" + (count + 1).ToString("00");
+
                 SqlCommand cmd = new SqlCommand("INSERT INTO NhaCungCap (OrderID, OrderName, Address, PhoneNumber) VALUES (@OrderID, @OrderName, @Address, @PhoneNumber)", conn);
 
-                cmd.Parameters.AddWithValue("@OrderID", supplier.OrderID);
+                cmd.Parameters.AddWithValue("@OrderID", newOrderID);
                 cmd.Parameters.AddWithValue("@OrderName", supplier.OrdderName);
                 cmd.Parameters.AddWithValue("@Address", supplier.Address);
                 cmd.Parameters.AddWithValue("@PhoneNumber", supplier.PhoneNumber);

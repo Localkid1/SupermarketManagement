@@ -151,6 +151,7 @@
             // 
             // txtManhacungcap
             // 
+            this.txtManhacungcap.Enabled = false;
             this.txtManhacungcap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtManhacungcap.Location = new System.Drawing.Point(174, 126);
             this.txtManhacungcap.Multiline = true;

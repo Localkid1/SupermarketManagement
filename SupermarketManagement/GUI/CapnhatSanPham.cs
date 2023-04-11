@@ -119,6 +119,7 @@ namespace SupermarketManagement.GUI
         private void ThemSanPham_Load(object sender, EventArgs e)
         {
            
+
             if (SanPham.selectedRow != null) 
             {
                 txtMasanpham.Text = SanPham.selectedRow.Cells[0].Value.ToString();

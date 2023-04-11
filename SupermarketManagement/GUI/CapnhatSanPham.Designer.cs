@@ -57,6 +57,7 @@
             // 
             // txtMasanpham
             // 
+            this.txtMasanpham.Enabled = false;
             this.txtMasanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMasanpham.Location = new System.Drawing.Point(179, 119);
             this.txtMasanpham.Multiline = true;
@@ -338,7 +339,11 @@
             this.Controls.Add(this.txtChatluong);
             this.Controls.Add(this.txtSoluong);
             this.Controls.Add(this.txtMasanpham);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ThemSanPham";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemSanPham";
             this.Load += new System.EventHandler(this.ThemSanPham_Load);

@@ -143,6 +143,7 @@
             // 
             // txtManhanvien
             // 
+            this.txtManhanvien.Enabled = false;
             this.txtManhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtManhanvien.Location = new System.Drawing.Point(151, 95);
             this.txtManhanvien.Multiline = true;

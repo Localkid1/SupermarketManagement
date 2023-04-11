@@ -47,14 +47,38 @@ namespace SupermarketManagement.DAO
             return employee;
         }
 
+        private int GetEmployeeCount()
+        {
+            int count = 0;
+            // Tạo kết nối đến cơ sở dữ liệu
 
+            conn.Open();
+            // Tạo câu lệnh SQL để lấy số lượng nhân viên
+            string sql = "SELECT COUNT(*) FROM Nhanvien";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            // Thực thi câu lệnh SQL và lấy kết quả
+            count = (int)cmd.ExecuteScalar();
+
+
+            // Đóng kết nối
+            conn.Close();
+
+            return count;
+        }
         public bool AddEmployee(NhanvienDTO employee)
         {
             try
             {
+                int count = 0;
+                // Lấy số lượng nhân viên hiện có trong cơ sở dữ liệu
+                count = GetEmployeeCount();
+
+                // Tính toán mã nhân viên mới
+                string newEmployeeID = "EPL" + (count + 1).ToString("00");
+
                 SqlCommand cmd = new SqlCommand("INSERT INTO Nhanvien (EmployeeID, EmployeeName,Position, Address, Phone) VALUES (@EmployeeID, @EmployeeName,@Position, @Address, @Phone)", conn);
 
-                cmd.Parameters.AddWithValue("@EmployeeID", employee.EmployeeID);
+                cmd.Parameters.AddWithValue("@EmployeeID", newEmployeeID);
                 cmd.Parameters.AddWithValue("@EmployeeName", employee.EmployeeName);
                 cmd.Parameters.AddWithValue("@Position", employee.Position);
                 cmd.Parameters.AddWithValue("@Address", employee.Address);

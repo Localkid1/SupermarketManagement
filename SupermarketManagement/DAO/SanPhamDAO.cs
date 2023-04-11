@@ -49,14 +49,39 @@ namespace SupermarketManagement.DAO
             return products;
         }
 
-     
+        private int GetProductCount()
+        {
+            int count = 0;
+            // Tạo kết nối đến cơ sở dữ liệu
+          
+                conn.Open();
+                // Tạo câu lệnh SQL để lấy số lượng nhân viên
+                string sql = "SELECT COUNT(*) FROM SanPham";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                // Thực thi câu lệnh SQL và lấy kết quả
+                count = (int)cmd.ExecuteScalar();
+
+
+                // Đóng kết nối
+                conn.Close();
+            
+            return count;
+        }
+
         public bool AddProduct(SanPhamDTO product)
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO SanPham (ProductID, ProductName, ProductIndex, Price,Quanlity,  ExpirationDate, ProductPlace, Unit) VALUES (@ProductID, @ProductName, @ProductIndex, @Price,@Quanlity,  @ExpirationDate, @ProductPlace, @Unit)", conn);
+                int count = 0;
+                // Lấy số lượng nhân viên hiện có trong cơ sở dữ liệu
+                count = GetProductCount();
 
-                    cmd.Parameters.AddWithValue("@ProductID", product.ProductID);
+                // Tính toán mã nhân viên mới
+                string newProductID = "PDT" + (count + 1).ToString("00");
+
+                SqlCommand cmd = new SqlCommand("INSERT INTO SanPham (ProductID, ProductName, ProductIndex, Price,Quanlity,  ExpirationDate, ProductPlace, Unit) VALUES (@ProductID, @ProductName, @ProductIndex, @Price,@Quanlity,  @ExpirationDate, @ProductPlace, @Unit)", conn);
+
+                    cmd.Parameters.AddWithValue("@ProductID", newProductID);
                     cmd.Parameters.AddWithValue("@ProductName", product.ProductName);
                     cmd.Parameters.AddWithValue("@ProductIndex", product.ProductIndex);
                     cmd.Parameters.AddWithValue("@Price", product.Price);
