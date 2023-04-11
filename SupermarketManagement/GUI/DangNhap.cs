@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SupermarketManagement.BUS;
 using SupermarketManagement.DTO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace SupermarketManagement.GUI
 {
@@ -80,6 +81,14 @@ namespace SupermarketManagement.GUI
             Application.Exit();
         }
 
-      
+        private void btnSignout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMain main = new frmMain();
+            main.Show();
+
+        }
+
+       
     }
 }

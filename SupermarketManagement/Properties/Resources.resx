@@ -118,14 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Circle_K_logo_2016" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\Circle_K_logo_2016.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="order-delivery" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\order-delivery.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="qr_sipsave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\qr_sipsave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="management" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\management.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Circle_K_logo_2016" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\Circle_K_logo_2016.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="password" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cK" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\cK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,9 +148,6 @@
   <data name="box" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="password" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\bill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,7 +157,10 @@
   <data name="logoHoadon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\logoHoadon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="qr_sipsave" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\qr_sipsave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="order-delivery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\order-delivery.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="11_1st-store-in-Hai-Phong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\11_1st-store-in-Hai-Phong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

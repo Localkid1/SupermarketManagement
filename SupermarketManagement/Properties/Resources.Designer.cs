@@ -63,6 +63,16 @@ namespace SupermarketManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _11_1st_store_in_Hai_Phong {
+            get {
+                object obj = ResourceManager.GetObject("11_1st-store-in-Hai-Phong", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bill {
             get {
                 object obj = ResourceManager.GetObject("bill", resourceCulture);

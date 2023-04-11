@@ -16,7 +16,7 @@ namespace SupermarketManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GUI.DangNhap());
+            Application.Run(new GUI.frmMain());
         }
     }
 }
