@@ -602,6 +602,12 @@ namespace SupermarketManagement.GUI
                     case "Ngày (Tháng 12)":
                         query = "SELECT InvoiceDate AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1 WHERE DATEPART(month, InvoiceDate) = 12 GROUP BY InvoiceDate ORDER BY InvoiceDate";
                         break;
+                    case "Tháng":
+                        query = "SELECT Month(InvoiceDate) AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1  GROUP BY Month(InvoiceDate) ORDER BY Month(InvoiceDate)";
+                        break;
+                    case "Năm":
+                        query = "SELECT YEAR(InvoiceDate) AS Ngay, SUM(TotalAmount1) AS TongTien FROM HoaDonBan1  GROUP BY YEAR(InvoiceDate) ORDER BY YEAR(InvoiceDate)";
+                        break;
                     default:
                         MessageBox.Show("Vui lòng chọn lại mốc thời gian");
                         return;
@@ -715,6 +721,18 @@ namespace SupermarketManagement.GUI
                             ws.Cells[1, 1].Style.Font.Bold = false;
                             ws.Cells[1, 1].Style.Font.Size = 20;
                             break;
+                        case "Tháng":
+                            ws.Cells[1, 1].Value = "Báo cáo doanh thu theo tháng:";
+                            // Set font style for a range of cells
+                            ws.Cells[1, 1].Style.Font.Bold = false;
+                            ws.Cells[1, 1].Style.Font.Size = 20;
+                            break;
+                        case "Năm":
+                            ws.Cells[1, 1].Value = "Báo cáo doanh thu theo năm:";
+                            // Set font style for a range of cells
+                            ws.Cells[1, 1].Style.Font.Bold = false;
+                            ws.Cells[1, 1].Style.Font.Size = 20;
+                            break;
                         default:
                             MessageBox.Show("Vui lòng chọn lại mốc thời gian");
                             return;
@@ -767,6 +785,8 @@ namespace SupermarketManagement.GUI
 
                 }
             }
-        }            
+        }
+
+      
     }
 }

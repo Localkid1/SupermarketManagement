@@ -161,17 +161,18 @@
             // btnSignout
             // 
             this.btnSignout.BackColor = System.Drawing.Color.White;
+            this.btnSignout.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSignout.FlatAppearance.BorderSize = 0;
             this.btnSignout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignout.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
             this.btnSignout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignout.ForeColor = System.Drawing.Color.Black;
             this.btnSignout.IconChar = FontAwesome.Sharp.IconChar.SignIn;
-            this.btnSignout.IconColor = System.Drawing.Color.Black;
+            this.btnSignout.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
             this.btnSignout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSignout.IconSize = 30;
             this.btnSignout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSignout.Location = new System.Drawing.Point(21, 478);
+            this.btnSignout.Location = new System.Drawing.Point(4, 4);
             this.btnSignout.Name = "btnSignout";
             this.btnSignout.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnSignout.Size = new System.Drawing.Size(82, 52);

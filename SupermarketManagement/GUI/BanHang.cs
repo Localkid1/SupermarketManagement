@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DocumentFormat.OpenXml.Wordprocessing;
 using DocumentFormat.OpenXml.Vml;
-
+using System.Text.RegularExpressions;
 
 namespace SupermarketManagement.GUI
 {
@@ -148,6 +148,22 @@ namespace SupermarketManagement.GUI
          
         }
 
+        private static bool IsNumber(string val)
+        {
+            if (val != "")
+                return Regex.IsMatch(val, @"^[0-9]\d*\.?[0]*$");
+            else return true;
+        }
+
+        private void txtSoluongnhap_TextChanged(object sender, EventArgs e)
+        {
+            if (IsNumber(txtSoluongnhap.Text) != true)
+            {
+                MessageBox.Show("Dữ liệu nhập không hợp lệ, không được nhập ký tự", "Thông báo");
+                txtSoluongnhap.Text = "";
+            }
+        }
+
         private void btnThemsanpham_Click(object sender, EventArgs e)
         {
             string connectionString = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=db.Supermarket;Integrated Security=True";
@@ -239,6 +255,7 @@ namespace SupermarketManagement.GUI
 
 
                     string invoiceInfo = string.Empty;
+         
                     foreach (DataGridViewRow row in dataGridViewHoadon.Rows)
                     {
                         if (
@@ -383,6 +400,8 @@ namespace SupermarketManagement.GUI
                 }
             }
         }
+
+       
     }
 }
 

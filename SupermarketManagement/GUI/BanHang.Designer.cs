@@ -174,6 +174,7 @@
             this.txtSoluongnhap.Name = "txtSoluongnhap";
             this.txtSoluongnhap.Size = new System.Drawing.Size(202, 38);
             this.txtSoluongnhap.TabIndex = 22;
+            this.txtSoluongnhap.TextChanged += new System.EventHandler(this.txtSoluongnhap_TextChanged);
             // 
             // txtSoluong
             // 

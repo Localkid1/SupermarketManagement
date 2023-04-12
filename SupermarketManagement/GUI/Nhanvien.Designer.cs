@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,10 +49,9 @@
             this.btnSuanhanvien = new FontAwesome.Sharp.IconButton();
             this.btnClear = new FontAwesome.Sharp.IconButton();
             this.btnThemnhanvien = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNhanvien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNhanvien)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,6 +63,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1151, 71);
             this.panel1.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SupermarketManagement.Properties.Resources.employees;
+            this.pictureBox1.Location = new System.Drawing.Point(22, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -121,6 +131,7 @@
             this.txtSodienthoai.Name = "txtSodienthoai";
             this.txtSodienthoai.Size = new System.Drawing.Size(202, 38);
             this.txtSodienthoai.TabIndex = 21;
+            this.txtSodienthoai.TextChanged += new System.EventHandler(this.txtSodienthoai_TextChanged);
             // 
             // label4
             // 
@@ -198,6 +209,8 @@
             // btnTimkiemnhanvien
             // 
             this.btnTimkiemnhanvien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnTimkiemnhanvien.FlatAppearance.BorderSize = 0;
+            this.btnTimkiemnhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimkiemnhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimkiemnhanvien.ForeColor = System.Drawing.Color.White;
             this.btnTimkiemnhanvien.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
@@ -216,6 +229,8 @@
             // btnInnhanvien
             // 
             this.btnInnhanvien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnInnhanvien.FlatAppearance.BorderSize = 0;
+            this.btnInnhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInnhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInnhanvien.ForeColor = System.Drawing.Color.White;
             this.btnInnhanvien.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;
@@ -234,6 +249,8 @@
             // btnXoanhanvien
             // 
             this.btnXoanhanvien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnXoanhanvien.FlatAppearance.BorderSize = 0;
+            this.btnXoanhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoanhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoanhanvien.ForeColor = System.Drawing.Color.White;
             this.btnXoanhanvien.IconChar = FontAwesome.Sharp.IconChar.CableCar;
@@ -252,6 +269,8 @@
             // btnSuanhanvien
             // 
             this.btnSuanhanvien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnSuanhanvien.FlatAppearance.BorderSize = 0;
+            this.btnSuanhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuanhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuanhanvien.ForeColor = System.Drawing.Color.White;
             this.btnSuanhanvien.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
@@ -270,6 +289,8 @@
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.IconChar = FontAwesome.Sharp.IconChar.Repeat;
@@ -288,6 +309,8 @@
             // btnThemnhanvien
             // 
             this.btnThemnhanvien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnThemnhanvien.FlatAppearance.BorderSize = 0;
+            this.btnThemnhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemnhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemnhanvien.ForeColor = System.Drawing.Color.White;
             this.btnThemnhanvien.IconChar = FontAwesome.Sharp.IconChar.Add;
@@ -302,16 +325,6 @@
             this.btnThemnhanvien.Text = "Thêm";
             this.btnThemnhanvien.UseVisualStyleBackColor = false;
             this.btnThemnhanvien.Click += new System.EventHandler(this.btnThemnhanvien_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SupermarketManagement.Properties.Resources.employees;
-            this.pictureBox1.Location = new System.Drawing.Point(22, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // Nhanvien
             // 
@@ -342,8 +355,8 @@
             this.Text = "Nhanvien";
             this.Load += new System.EventHandler(this.Nhanvien_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNhanvien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNhanvien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

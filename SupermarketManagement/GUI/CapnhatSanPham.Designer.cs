@@ -82,6 +82,7 @@
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(225, 38);
             this.txtGia.TabIndex = 0;
+            this.txtGia.TextChanged += new System.EventHandler(this.txtGia_TextChanged);
             // 
             // label1
             // 
@@ -146,6 +147,8 @@
             // btnThemsanpham
             // 
             this.btnThemsanpham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnThemsanpham.FlatAppearance.BorderSize = 0;
+            this.btnThemsanpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemsanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemsanpham.ForeColor = System.Drawing.Color.White;
             this.btnThemsanpham.IconChar = FontAwesome.Sharp.IconChar.Add;
@@ -164,6 +167,8 @@
             // btnSuasanpham
             // 
             this.btnSuasanpham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnSuasanpham.FlatAppearance.BorderSize = 0;
+            this.btnSuasanpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuasanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuasanpham.ForeColor = System.Drawing.Color.White;
             this.btnSuasanpham.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
@@ -242,6 +247,8 @@
             // btnXoasanpham
             // 
             this.btnXoasanpham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnXoasanpham.FlatAppearance.BorderSize = 0;
+            this.btnXoasanpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoasanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoasanpham.ForeColor = System.Drawing.Color.White;
             this.btnXoasanpham.IconChar = FontAwesome.Sharp.IconChar.CableCar;
@@ -260,6 +267,8 @@
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.IconChar = FontAwesome.Sharp.IconChar.Repeat;
@@ -293,6 +302,7 @@
             this.txtSoluong.Name = "txtSoluong";
             this.txtSoluong.Size = new System.Drawing.Size(225, 38);
             this.txtSoluong.TabIndex = 0;
+            this.txtSoluong.TextChanged += new System.EventHandler(this.txtSoluong_TextChanged);
             // 
             // cbxTennhacungcap
             // 
@@ -348,13 +358,13 @@
             this.Controls.Add(this.txtTensanpham);
             this.Controls.Add(this.txtSoluong);
             this.Controls.Add(this.txtMasanpham);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ThemSanPham";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ThemSanPham";
             this.Load += new System.EventHandler(this.ThemSanPham_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

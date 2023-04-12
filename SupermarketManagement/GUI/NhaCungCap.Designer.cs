@@ -120,6 +120,7 @@
             this.txtSodienthoai.Name = "txtSodienthoai";
             this.txtSodienthoai.Size = new System.Drawing.Size(202, 38);
             this.txtSodienthoai.TabIndex = 4;
+            this.txtSodienthoai.TextChanged += new System.EventHandler(this.txtSodienthoai_TextChanged);
             // 
             // label4
             // 
@@ -176,6 +177,8 @@
             // btnXoanhacungcap
             // 
             this.btnXoanhacungcap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnXoanhacungcap.FlatAppearance.BorderSize = 0;
+            this.btnXoanhacungcap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoanhacungcap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoanhacungcap.ForeColor = System.Drawing.Color.White;
             this.btnXoanhacungcap.IconChar = FontAwesome.Sharp.IconChar.CableCar;
@@ -194,6 +197,8 @@
             // btnSuanhacungcap
             // 
             this.btnSuanhacungcap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnSuanhacungcap.FlatAppearance.BorderSize = 0;
+            this.btnSuanhacungcap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuanhacungcap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuanhacungcap.ForeColor = System.Drawing.Color.White;
             this.btnSuanhacungcap.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
@@ -212,6 +217,8 @@
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.IconChar = FontAwesome.Sharp.IconChar.Repeat;
@@ -230,6 +237,8 @@
             // btnThemnhacungcap
             // 
             this.btnThemnhacungcap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnThemnhacungcap.FlatAppearance.BorderSize = 0;
+            this.btnThemnhacungcap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemnhacungcap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemnhacungcap.ForeColor = System.Drawing.Color.White;
             this.btnThemnhacungcap.IconChar = FontAwesome.Sharp.IconChar.Add;
@@ -248,6 +257,8 @@
             // btnInnhacungcap
             // 
             this.btnInnhacungcap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnInnhacungcap.FlatAppearance.BorderSize = 0;
+            this.btnInnhacungcap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInnhacungcap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInnhacungcap.ForeColor = System.Drawing.Color.White;
             this.btnInnhacungcap.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;
@@ -275,6 +286,8 @@
             // btnTimkiemnhacungcap
             // 
             this.btnTimkiemnhacungcap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnTimkiemnhacungcap.FlatAppearance.BorderSize = 0;
+            this.btnTimkiemnhacungcap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimkiemnhacungcap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimkiemnhacungcap.ForeColor = System.Drawing.Color.White;
             this.btnTimkiemnhacungcap.IconChar = FontAwesome.Sharp.IconChar.Sistrix;

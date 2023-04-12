@@ -84,6 +84,8 @@
             // btnCapnhatsanpham
             // 
             this.btnCapnhatsanpham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnCapnhatsanpham.FlatAppearance.BorderSize = 0;
+            this.btnCapnhatsanpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCapnhatsanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapnhatsanpham.ForeColor = System.Drawing.Color.White;
             this.btnCapnhatsanpham.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
@@ -91,7 +93,7 @@
             this.btnCapnhatsanpham.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCapnhatsanpham.IconSize = 30;
             this.btnCapnhatsanpham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCapnhatsanpham.Location = new System.Drawing.Point(0, 3);
+            this.btnCapnhatsanpham.Location = new System.Drawing.Point(0, 0);
             this.btnCapnhatsanpham.Name = "btnCapnhatsanpham";
             this.btnCapnhatsanpham.Size = new System.Drawing.Size(169, 53);
             this.btnCapnhatsanpham.TabIndex = 3;
@@ -127,6 +129,8 @@
             // btnTimkiemsanpham
             // 
             this.btnTimkiemsanpham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnTimkiemsanpham.FlatAppearance.BorderSize = 0;
+            this.btnTimkiemsanpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimkiemsanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimkiemsanpham.ForeColor = System.Drawing.Color.White;
             this.btnTimkiemsanpham.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
@@ -145,6 +149,8 @@
             // btnInsanpham
             // 
             this.btnInsanpham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnInsanpham.FlatAppearance.BorderSize = 0;
+            this.btnInsanpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsanpham.ForeColor = System.Drawing.Color.White;
             this.btnInsanpham.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;

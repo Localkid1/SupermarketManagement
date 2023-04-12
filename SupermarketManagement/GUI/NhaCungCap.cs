@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -239,6 +240,21 @@ namespace SupermarketManagement.GUI
             }
           
 
+        }
+        private static bool IsNumber(string val)
+        {
+            if (val != "")
+                return Regex.IsMatch(val, @"^[0-9]\d*\.?[0]*$");
+            else return true;
+        }
+      
+        private void txtSodienthoai_TextChanged(object sender, EventArgs e)
+        {
+            if (IsNumber(txtSodienthoai.Text) != true)
+            {
+                MessageBox.Show("Dữ liệu nhập không hợp lệ, không được nhập ký tự", "Thông báo");
+                txtSodienthoai.Text = "";
+            }
         }
     }
 }

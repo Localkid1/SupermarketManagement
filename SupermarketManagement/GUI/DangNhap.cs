@@ -83,12 +83,13 @@ namespace SupermarketManagement.GUI
 
         private void btnSignout_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmMain main = new frmMain();
-            main.Show();
-
-        }
-
-       
+            if (DialogResult.Yes == MessageBox.Show("Bạn có muốn đăng xuất ra màn hình trang chủ không?", "Thông báo", MessageBoxButtons.YesNo))
+            {
+                this.Hide();
+                frmMain main = new frmMain();
+                main.Show();
+            }
+            
+        }       
     }
 }

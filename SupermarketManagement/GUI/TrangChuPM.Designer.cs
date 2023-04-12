@@ -57,6 +57,7 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.White;
+            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -151,7 +152,7 @@
             // 
             this.quảnLýBánHàngToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.quảnLýBánHàngToolStripMenuItem.Name = "quảnLýBánHàngToolStripMenuItem";
-            this.quảnLýBánHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.quảnLýBánHàngToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.quảnLýBánHàngToolStripMenuItem.Text = "Quản lý bán hàng";
             this.quảnLýBánHàngToolStripMenuItem.Click += new System.EventHandler(this.quảnLýBánHàngToolStripMenuItem_Click);
             // 

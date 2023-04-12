@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,13 +74,13 @@
             // chartDoanhthu
             // 
             this.chartDoanhthu.BackColor = System.Drawing.Color.LightCyan;
-            chartArea1.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.chartDoanhthu.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.Color.LightCyan;
-            legend1.BorderColor = System.Drawing.Color.LightCyan;
-            legend1.Name = "Legend1";
-            this.chartDoanhthu.Legends.Add(legend1);
+            chartArea3.BackColor = System.Drawing.Color.Transparent;
+            chartArea3.Name = "ChartArea1";
+            this.chartDoanhthu.ChartAreas.Add(chartArea3);
+            legend3.BackColor = System.Drawing.Color.LightCyan;
+            legend3.BorderColor = System.Drawing.Color.LightCyan;
+            legend3.Name = "Legend1";
+            this.chartDoanhthu.Legends.Add(legend3);
             this.chartDoanhthu.Location = new System.Drawing.Point(1, 79);
             this.chartDoanhthu.Name = "chartDoanhthu";
             this.chartDoanhthu.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
@@ -115,13 +115,14 @@
             this.cbxDate.Name = "cbxDate";
             this.cbxDate.Size = new System.Drawing.Size(195, 33);
             this.cbxDate.TabIndex = 4;
+
             this.cbxDate.SelectedValueChanged += new System.EventHandler(this.cbxDate_SelectedValueChanged);
             // 
             // btnLapbaocao
             // 
-
-           
             this.btnLapbaocao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(41)))), ((int)(((byte)(28)))));
+            this.btnLapbaocao.FlatAppearance.BorderSize = 0;
+            this.btnLapbaocao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLapbaocao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLapbaocao.ForeColor = System.Drawing.Color.White;
             this.btnLapbaocao.IconChar = FontAwesome.Sharp.IconChar.Scroll;
