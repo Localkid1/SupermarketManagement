@@ -20,6 +20,8 @@ namespace SupermarketManagement.GUI
         DangNhapBUS loginbus = new DangNhapBUS();
         TrangChu trangChu = new TrangChu();
         BanHang banHang = new BanHang();
+
+        
         public DangNhap()
         {
             InitializeComponent();
@@ -87,9 +89,15 @@ namespace SupermarketManagement.GUI
             {
                 this.Hide();
                 frmMain main = new frmMain();
-                main.Show();
+                //this.Hide();
+                main.ShowDialog();
+                txtUsername.Clear();
+                txtPassword.Clear();
+               
             }
             
-        }       
+        }
+
+       
     }
 }

@@ -28,42 +28,42 @@ namespace SupermarketManagement.GUI
         {
             this.Hide(); // Đóng form hiện tại
             DangNhap dangNhap = new DangNhap();
-            dangNhap.Show(); // Hiển thị form Đăng nhập
+            dangNhap.ShowDialog(); // Hiển thị form Đăng nhập
         }
 
         private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide(); // Đóng form hiện tại
             DangNhap dangNhap = new DangNhap();
-            dangNhap.Show(); // Hiển thị form Đăng nhập
+            dangNhap.ShowDialog();
         }
 
         private void quảnLýNhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide(); // Đóng form hiện tại
             DangNhap dangNhap = new DangNhap();
-            dangNhap.Show(); // Hiển thị form Đăng nhập
+            dangNhap.ShowDialog();
         }
 
         private void thôngTinHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide(); // Đóng form hiện tại
             DangNhap dangNhap = new DangNhap();
-            dangNhap.Show(); // Hiển thị form Đăng nhập
+            dangNhap.ShowDialog();
         }
 
         private void quảnLýDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide(); // Đóng form hiện tại
             DangNhap dangNhap = new DangNhap();
-            dangNhap.Show(); // Hiển thị form Đăng nhập
+            dangNhap.ShowDialog();
         }
 
         private void quảnLýBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide(); // Đóng form hiện tại
             DangNhap dangNhap = new DangNhap();
-            dangNhap.Show(); // Hiển thị form Đăng nhập
+            dangNhap.ShowDialog();
         }
     }
 }
