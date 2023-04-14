@@ -55,6 +55,11 @@ namespace SupermarketManagement.GUI
             con.Open();
             System.Data.DataTable dt = new System.Data.DataTable();
             da.Fill(dt);
+            txtMasanpham.Enabled = false;
+            txtTensanpham.Enabled = false;
+            txtDonvitinh.Enabled = false;
+            txtSoluong.Enabled = false;
+            txtGiaban.Enabled = false;
             dataGridViewSpNhanvien.AllowUserToAddRows = false;
             dataGridViewSpNhanvien.RowTemplate.Height = 45;
             dataGridViewSpNhanvien.DataSource = dt;
