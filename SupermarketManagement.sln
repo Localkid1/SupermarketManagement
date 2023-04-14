@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupermarketManagement", "SupermarketManagement\SupermarketManagement.csproj", "{A85B9D17-9D3D-48CF-BB7F-8A635EBB9A2B}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Circle K", "Circle K\Circle K.vdproj", "{88E6558F-A1F1-4D79-8459-D6C275627EC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{A85B9D17-9D3D-48CF-BB7F-8A635EBB9A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A85B9D17-9D3D-48CF-BB7F-8A635EBB9A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A85B9D17-9D3D-48CF-BB7F-8A635EBB9A2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88E6558F-A1F1-4D79-8459-D6C275627EC0}.Debug|Any CPU.ActiveCfg = Debug
+		{88E6558F-A1F1-4D79-8459-D6C275627EC0}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -200,7 +200,8 @@
             this.cbxVitri.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbxVitri.FormattingEnabled = true;
             this.cbxVitri.Items.AddRange(new object[] {
-            "Bán hàng"});
+            "Bán hàng",
+            "Nhập kho"});
             this.cbxVitri.Location = new System.Drawing.Point(151, 232);
             this.cbxVitri.Name = "cbxVitri";
             this.cbxVitri.Size = new System.Drawing.Size(202, 33);

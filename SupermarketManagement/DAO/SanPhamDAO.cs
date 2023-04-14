@@ -96,9 +96,9 @@ namespace SupermarketManagement.DAO
 
                     return rowsAffected > 0;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                //MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show("Error: " + ex.Message);
                     return false;
                 }
             }
