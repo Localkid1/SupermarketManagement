@@ -119,7 +119,7 @@
             // 
             // txtTimkiemsanpham
             // 
-            this.txtTimkiemsanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.txtTimkiemsanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimkiemsanpham.Location = new System.Drawing.Point(434, 586);
             this.txtTimkiemsanpham.Multiline = true;
             this.txtTimkiemsanpham.Name = "txtTimkiemsanpham";
